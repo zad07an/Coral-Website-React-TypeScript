@@ -18,16 +18,6 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<IProducts>) => {
-      // const itemIndex: number = state.cartItems.findIndex(
-      //   (item: ICartItems) => item?.id === action.payload.id
-      // );
-      // if (itemIndex >= 0) {
-      //   state.cartItems = state.cartItems.filter(
-      //     (item: ICartItems) => item?.id === action.payload.id
-      //   );
-      //   state.cartAmount -= 1;
-      // } else {
-      // }
       state.cartItems.push({ ...action.payload, quantity: 1 });
       state.cartAmount += 1;
     },
